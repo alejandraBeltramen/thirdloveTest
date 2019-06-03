@@ -1,0 +1,42 @@
+@import '../icons';
+
+.uc-dropdown {
+
+  .uc-dd__title {
+    height: 18px;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    color: #222222;
+
+    margin-bottom: 8px;
+  }
+
+  .uc-dd-list {
+    height: 44px;
+    border: solid 1px #e0e0e0;
+    background-color: #ffffff;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #444444;
+
+    width: 100%;
+    padding-left: 14.3px;
+    cursor: pointer;
+
+
+    .uc-dd-icon {
+      background: $down-arrow no-repeat top left;
+      background-position: 0 0;
+      width: 7px;
+      height: 13px;
+    }
+  }
+}

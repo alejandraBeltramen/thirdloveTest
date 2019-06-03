@@ -1,8 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import ProductPage from './pages/ProductPage/ProductPage';
+import { render } from 'react-dom';
 
-const App: React.FC = () => {
+export default class App extends React.Component {
+  render() {
+    return (
+      <ProductPage productId={357375279141}/>
+    );
+  }
+}
+
+/*const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -23,4 +32,4 @@ const App: React.FC = () => {
   );
 }
 
-export default App;
+export default App; */
