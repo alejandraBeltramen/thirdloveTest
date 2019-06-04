@@ -8,7 +8,6 @@ import * as _ from 'lodash';
 import { PRODUCT_URL, HTTPS, COLORS, MIN_STOCK } from './ProductPageConstansts';
 
 type ProductPageProps = {
-  productId: number
 };
 type ProductPageState = {
   colors: string[]

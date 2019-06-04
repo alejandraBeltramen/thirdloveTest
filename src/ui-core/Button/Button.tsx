@@ -8,9 +8,6 @@ type ButonProps = {
 type ButtonState = {};
 
 export default class Button extends React.Component<ButonProps, ButtonState> {
-  constructor(props: ButonProps) {
-    super(props);
-  }
   render() {
     return (
       <button className='uc-button' onClick={this.props.onClick}>

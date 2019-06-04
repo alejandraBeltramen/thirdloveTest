@@ -3,7 +3,6 @@ import './ProductVariants.scss';
 import ColorPicker from '../../ui-core/ColorPicker/ColorPicker';
 import Dropdown from '../../ui-core/Dropdown/Dropdown';
 import Button from '../../ui-core/Button/Button';
-import * as _ from 'lodash';
 
 type ProductVariantsProps = {
   colors: string[],
@@ -19,10 +18,6 @@ type ProductVariantsProps = {
 type ProductVariantsState = {};
 
 export default class ProductVariants extends React.Component<ProductVariantsProps, ProductVariantsState> {
-  constructor(props: ProductVariantsProps) {
-    super(props);
-  }
-
   render() {
     const {
       colors,

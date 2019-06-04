@@ -1,6 +1,5 @@
 import React from 'react';
 import './ColorPicker.scss';
-import * as _ from 'lodash';
 
 type ColorPickerProps = {
   colors: string[],
@@ -10,10 +9,6 @@ type ColorPickerProps = {
 type ColorPickerState = {};
 
 export default class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
-  constructor(props: ColorPickerProps) {
-    super(props);
-  }
-
   parseSelectedColor(selectedColor: string) {
     return selectedColor.replace('-', ' ');
   }

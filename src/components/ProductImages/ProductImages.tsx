@@ -42,7 +42,7 @@ export default class ProductImages extends React.Component<ProductImagesProps, P
     const classes = (this.state.currentIndex === i) ? 'pi-image-list__thumbnail selected' : 'pi-image-list__thumbnail';
 
     return (
-      <img src={image.thumbnail} key={i} className={classes} onClick={() => this.slideTo(i)}></img>
+      <img src={image.thumbnail} className={classes} onClick={() => this.slideTo(i)} key={i}  alt="Bra"></img>
     );
   }
 
@@ -55,7 +55,7 @@ export default class ProductImages extends React.Component<ProductImagesProps, P
   }
 
   renderMainImage = (image: BraImage) => (
-    <img className="pi__wrapper__image" src={image.main}></img>
+    <img className="pi__wrapper__image" src={image.main} alt="Bra"></img>
   );
 
   render() {

@@ -1,5 +1,3 @@
-import { privateEncrypt } from "crypto";
-
 export interface Bra {
 	id: number;
 	price: number;
