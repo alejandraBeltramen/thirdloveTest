@@ -3,6 +3,7 @@ import './ProductImages.scss';
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import { BraImage } from '../../models/Bra';
+import * as _ from 'lodash';
 
 type ProductImagesProps = {
   images: BraImage[]
@@ -39,7 +40,11 @@ export default class ProductImages extends React.Component<ProductImagesProps, P
   onSlideChanged = (e: any) => this.setState({ currentIndex: e.item });
 
   renderThumb = (image: any, i: number) => {
-    const classes = (this.state.currentIndex === i) ? 'pi-image-list__thumbnail selected' : 'pi-image-list__thumbnail';
+    let index = 0;
+    if(_.get(this.state, 'currentIndex')) {
+      index = this.state.currentIndex;
+    }
+    const classes = (index === i) ? 'pi-image-list__thumbnail selected' : 'pi-image-list__thumbnail';
 
     return (
       <img src={image.thumbnail} className={classes} onClick={() => this.slideTo(i)} key={i}  alt="Bra"></img>
@@ -66,11 +71,12 @@ export default class ProductImages extends React.Component<ProductImagesProps, P
         <ul className="pi-image-list">{ thumbnails }</ul>
         <div className="pi__wrapper">
           <AliceCarousel mouseDragEnabled
-                        items={main}
-                        buttonsDisabled={true}
-                        slideToIndex={currentIndex}
-                        onSlideChanged={this.onSlideChanged}
-                        dotsDisabled={true}>
+                         items={main}
+                         buttonsDisabled={true}
+                         slideToIndex={currentIndex}
+                         onSlideChanged={this.onSlideChanged}
+                         dotsDisabled={true}
+                         swipeDisabled={(window.screen.width * window.devicePixelRatio)>= 1024}>
           </AliceCarousel>
         </div>
         <ul className="pi-image-dots">{ main.map(this.renderDot) }</ul>

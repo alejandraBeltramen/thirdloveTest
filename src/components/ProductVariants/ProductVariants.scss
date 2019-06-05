@@ -47,8 +47,9 @@
   
   @media (min-width: 1024px) {
     display: inline-block;
-    float: left;
+    float: right;
     padding-left: 50px;
-    padding-top: 0px;
+		padding-top: 0px;
+		width: 40%;
   }
 }

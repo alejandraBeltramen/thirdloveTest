@@ -48,9 +48,13 @@
     .pi__wrapper {
       width: 90%;
 
-      .pi__wrapper__image{
-        width: 100%;
-        float: left;
+      li {
+        width: 100% !important;
+
+        .pi__wrapper__image{
+          width: 100%;
+          float: left;
+        }
       }
     }
 
@@ -66,9 +70,12 @@
         width: 74px;
         float: left;
         margin-bottom: 10px;
+        cursor: pointer;
 
         &.selected {
           border: solid 1px #888888;
+          height: 81px;
+          width: 73px;
         }
       }
     }
