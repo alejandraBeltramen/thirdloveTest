@@ -2,23 +2,21 @@ import React from 'react';
 import './Dropdown.scss';
 
 type DropdownProps = {
+  // label to be displayed as a name of the dropdown
   title: string,
-  items: any[],
+  // options of the dropdown
+  items: any[], 
   onChange(change: any): void
 };
-type DropdownState = {
-  title: string
-};
+type DropdownState = {};
 
 export default class Dropdown extends React.Component<DropdownProps, DropdownState> {
-  constructor(props: DropdownProps) {
-    super(props);
-    this.state = {
-      title: this.props.title
-    }
-  }
-
-  renderOption(item: string, i: number) {
+  /**
+   * Rendering of each option of the dropdown
+   * @param item option to be rendered
+   * @param i key
+   */
+  renderOption(item: string, i: number): JSX.Element {
     return (
       <option key={i} className="uc-dd-list__item">
         { item }
@@ -26,9 +24,11 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
     );
   }
 
+  /**
+   * Rendering of the component itself
+   */
   render() {
-    const {items, onChange} = this.props;
-    const {title} = this.state;
+    const { items, onChange, title } = this.props;
     return (
       <div className="uc-dropdown">
         <div className="uc-dd__title">

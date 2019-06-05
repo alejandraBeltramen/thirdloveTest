@@ -7,20 +7,31 @@ import { BraImage, RawBraImage, BraVariant } from '../../models/Bra';
 import * as _ from 'lodash';
 import { PRODUCT_URL, HTTPS, COLORS, MIN_STOCK } from './ProductPageConstansts';
 
-type ProductPageProps = {
-};
+type ProductPageProps = {};
 type ProductPageState = {
+  // available colors to be displayed in the color picker
   colors: string[]
+  // color that is currently selected
   selectedColor: string,
+  // inventory for the current selected color, band and cup size
   stock: number,
+  // collection of the current band sizes by the selected color
   bandSizes: string[],
+  // band size that is currently selected
   selectedBandSize: any,
+  // collection of the current band sizes by the selected color and band size
   cupSizes: string[],
+  // cup size that is currently selected
   selectedCupSize: string,
+  // data structure to handle the products assigned by color, bra and cupsize
   productMap: any,
+  // title of the page
   title: string,
+  // details of the product
   productDetails: any,
+  // collection of images of the product
   images: BraImage[],
+  // price of the product
   price: string,
 };
 
@@ -50,13 +61,23 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
       .catch(error => console.log('Error while fetching data', error));
   }
 
-  handleColorChange(color: string) {
+  /**
+   * Executed when is selected a color.
+   * Updates the available band and cup sizes for this new color.
+   * @param color new selected color
+   */
+  handleColorChange(color: string): void {
     const { productMap } = this.state;
     this.updateProductSelection(productMap, color);
     this.setState({ selectedColor: color });
   }
 
-  handleBandSizeChange(bandSize: string) {
+  /**
+   * Executed when is selected a band size.
+   * Updates the available cup sizes for this new band size.
+   * @param bandSize new selected band size
+   */
+  handleBandSizeChange(bandSize: string): void {
     const { productMap, selectedColor } = this.state;
     const cupSizes = this.getCupSizesByBandSize(productMap, this.state.selectedColor, bandSize);
     const selectedCupSize = _.head(cupSizes);
@@ -68,7 +89,12 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
     });
   }
 
-  handleCupSizeChange(cupSize: string) {
+  /**
+   * Executed when is selected a new cup size.
+   * Updates the available stock for the new selected cup size.
+   * @param cupSize new selected cup size
+   */
+  handleCupSizeChange(cupSize: string): void {
     const { productMap, selectedColor, selectedBandSize } = this.state;
     this.setState({
       selectedCupSize: cupSize,
@@ -76,16 +102,20 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
     });
   }
 
-  handleAddToBugClick() {
+  /**
+   * Executed when the buy button is clicked. It adds the selected
+   * product to the cart.
+   */
+  handleAddToBugClick(): void {
     const { title, selectedBandSize, selectedCupSize } = this.state;
     const message = `Added a ${title} - ${selectedBandSize}${selectedCupSize} to the cart`;
     alert(message);
   }
 
   /**
-   * It receives raw data from a product and it proccess that data
-   * to generate a data structure useful in the UI
-   * @param data 
+   * It receives raw data from a product and it handles
+   * to initialize the current state of product selection
+   * @param data raw data received from the API
    */
   processData(data: any) {
     const productMap = this.createProductMap(data.variants);
@@ -102,11 +132,11 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
 
   /**
    * It receives raw data from a product and it proccess that data
-   * to generate a data structure useful in the UI
-   * @param productMap 
-   * @param variants 
+   * to generate a data structure useful in the UI. It avoids those
+   * variants that do not have enough stock.
+   * @param variants to be mapped into the product map
    */
-  createProductMap(variants: BraVariant[]) {
+  createProductMap(variants: BraVariant[]): [] {
     const productMap: any = {};
     _.each(variants, (variant: BraVariant) => {
       if(variant.inventory_quantity >= MIN_STOCK) {
@@ -131,7 +161,12 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
     return productMap;
   }
 
-  updateProductSelection(productMap: any[], selectedColor: any) {
+  /**
+   * Updates the band and cup sizes by the new selected color.
+   * @param productMap 
+   * @param selectedColor the new selected color
+   */
+  updateProductSelection(productMap: any[], selectedColor: any): void {
     const bandSizes = this.getBandSizesByColor(productMap, selectedColor);
     const selectedBandSize = _.head(bandSizes);
     const cupSizes = this.getCupSizesByBandSize(productMap, selectedColor, selectedBandSize);
@@ -146,15 +181,30 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
     });
   }
 
+  /**
+   * Gets the available band sizes by the new selected color.
+   * @param productMap 
+   * @param selectedColor 
+   */
   getBandSizesByColor(productMap: any[], selectedColor: any): any[] {
     return _.map(productMap[selectedColor], (bandSize) => (bandSize.name));
   }
 
+  /**
+   * Gets the available cup sizes by a selected band size and color
+   * @param productMap 
+   * @param selectedColor 
+   * @param selectedBandSize 
+   */
   getCupSizesByBandSize(productMap: any[], selectedColor: any, selectedBandSize: any): any[] {
     const bandSizes = _.omit(productMap[selectedColor][selectedBandSize], 'name');
     return _.map(bandSizes, (cupSize) => (cupSize.name));
   }
 
+  /**
+   * Maps a raw image into an image object useful
+   * @param rawImages 
+   */
   getImages(rawImages: []): BraImage[] {
     return _.map(rawImages, (rawImage: RawBraImage) => ({
       main: `${HTTPS}${rawImage.src1000}`,
@@ -162,17 +212,28 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
     }));
   }
 
+  /**
+   * Gets the band size from a single size.
+   * E.g.: size 38B => 38
+   * @param size 
+   */
   getBandSize(size: string): string {
     return size.substring(0,2);
   }
 
+  /**
+   * Gets the cup size from a single size.
+   * E.g.: size 38B => B
+   * @param size 
+   */
   getCupSize(size: string): string {
     return size.substring(2,3);
   }
 
   /**
    * Gets the clear bra price from a bra variant. If there is no 
-   * bra variant available to get the price, default value will be '-'
+   * bra variant available to get the price, default value will be '-'.
+   * E.g.: price 68.00 => 68
    * @param variants 
    */
   getPrice(variants: BraVariant[]): string {
@@ -180,6 +241,9 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
     return rawPrice.slice(0, rawPrice.indexOf('.'));
   }
 
+  /**
+   * Rendering of the component itself
+   */
   render() {
     const { 
       colors,

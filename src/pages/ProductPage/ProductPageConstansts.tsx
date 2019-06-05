@@ -8,3 +8,4 @@ export const COLORS = [
     'naked-5'
 ];
 export const MIN_STOCK = 10;
+export const DESKTOP_WIDTH = 1024;
