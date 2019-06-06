@@ -69,7 +69,12 @@ export default class ProductImages extends React.Component<ProductImagesProps, P
     const classes = (index === i) ? 'pi-image-list__thumbnail selected' : 'pi-image-list__thumbnail';
 
     return (
-      <img src={image.thumbnail} className={classes} onClick={() => this.slideTo(i)} key={i}  alt="Bra"></img>
+      <img src={ image.thumbnail } 
+           className={ classes }
+           onClick={() => this.slideTo(i)} 
+           key={i} 
+           alt="Bra">
+      </img>
     );
   }
 
@@ -82,7 +87,7 @@ export default class ProductImages extends React.Component<ProductImagesProps, P
     const classes = (this.state.currentIndex === i) ? 'pi-image-dots__dot selected' : 'pi-image-dots__dot';
 
     return (
-      <div key={i} className={classes} onClick={() => this.slideTo(i)}/>
+      <div key={i} className={ classes } onClick={() => this.slideTo(i)}/>
     );
   }
 
@@ -91,7 +96,7 @@ export default class ProductImages extends React.Component<ProductImagesProps, P
    * @param image image to be displayed
    */
   renderMainImage = (image: BraImage) => (
-    <img className="pi__wrapper__image" src={image.main} alt="Bra"></img>
+    <img className="pi__wrapper__image" src={ image.main } alt="Bra"></img>
   );
 
   /**
@@ -105,13 +110,13 @@ export default class ProductImages extends React.Component<ProductImagesProps, P
         <ul className="pi-image-list">{ thumbnails }</ul>
         <div className="pi__wrapper">
           <AliceCarousel mouseDragEnabled
-                         items={main}
-                         buttonsDisabled={true}
-                         slideToIndex={currentIndex}
-                         onSlideChanged={this.onSlideChanged}
-                         dotsDisabled={true}
-                         onResized={() => this.setState({swipeDisabled: this.isSwipeEnabled()})}
-                         swipeDisabled={swipeDisabled}>
+                         items={ main }
+                         buttonsDisabled={ true }
+                         slideToIndex={ currentIndex }
+                         onSlideChanged={ this.onSlideChanged }
+                         dotsDisabled={ true }
+                         onResized={ () => this.setState({ swipeDisabled: this.isSwipeEnabled() }) }
+                         swipeDisabled={ swipeDisabled }>
           </AliceCarousel>
         </div>
         <ul className="pi-image-dots">{ main.map(this.renderDot) }</ul>

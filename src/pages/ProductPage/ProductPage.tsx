@@ -32,7 +32,7 @@ type ProductPageState = {
   // collection of images of the product
   images: BraImage[],
   // price of the product
-  price: string,
+  price: string
 };
 
 export default class ProductPage extends React.Component<ProductPageProps, ProductPageState> {
@@ -265,7 +265,7 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
           </header>
 
           <div className="pp__images">
-            <ProductImages images={images}></ProductImages>
+            <ProductImages images={ images }></ProductImages>
           </div>
 
           <ProductVariants colors={ colors }
@@ -280,7 +280,7 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
           </ProductVariants>
         </div>
 
-        <ProductDetails details={productDetails}></ProductDetails>        
+        <ProductDetails details={ productDetails }></ProductDetails>        
       </section>
     );
   }

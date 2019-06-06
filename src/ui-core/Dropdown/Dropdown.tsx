@@ -35,7 +35,7 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
           { title }
         </div>
         <div className="uc-dd__select">
-          <select className="uc-dd-list" onChange={(event) => onChange(event.target.value)}>
+          <select className="uc-dd-list" onChange={ (event) => onChange(event.target.value) }>
             { items.map((item: string, i: number) => this.renderOption(item, i)) }
           </select>
         </div>

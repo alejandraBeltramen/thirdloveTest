@@ -34,7 +34,7 @@ export default class ColorPicker extends React.Component<ColorPickerProps, Color
       styleClass = `${styleClass} selected`;
     }
     return (
-      <div key={i} className={styleClass} onClick={() => onSelection(color)}></div>
+      <div key={i} className={styleClass} onClick={ () => onSelection(color) }></div>
     );
   }
 
@@ -49,7 +49,7 @@ export default class ColorPicker extends React.Component<ColorPickerProps, Color
         <span className="uc-cp__title"> COLOR: </span>
         <span className="uc-cp__selection">{ this.parseSelectedColor(selectedColor) }</span>
         <div className='uc-cp-options'>
-          {colors.map((color,i) => this.renderColorOption(color, i))}
+          { colors.map((color,i) => this.renderColorOption(color, i)) }
         </div>
       </div>
     );

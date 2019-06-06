@@ -23,7 +23,7 @@ export default class ProductDetails extends React.Component<ProductDetailsProps,
 			<section className="product-details">
 
 				<h2 className="pd__title">DETAILS</h2>
-				<div dangerouslySetInnerHTML={this.createDetails()}></div>
+				<div dangerouslySetInnerHTML={ this.createDetails() }></div>
 			</section>
 		);
 	}

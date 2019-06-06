@@ -46,9 +46,9 @@ export default class ProductVariants extends React.Component<ProductVariantsProp
     return (
       <div className="product-variants">
         <div className="pv__color">
-          <ColorPicker colors={colors}
-                       selectedColor={selectedColor}
-                       onSelection={handleColorChange}>
+          <ColorPicker colors={ colors }
+                       selectedColor={ selectedColor }
+                       onSelection={ handleColorChange }>
           </ColorPicker>
         </div>
 
@@ -60,21 +60,21 @@ export default class ProductVariants extends React.Component<ProductVariantsProp
         <div className="pv-size">
           <div className="pv__band-size">
             <Dropdown title="BAND SIZE"
-                      items={bandSizes}
-                      onChange={handleBandSizeChange}>
+                      items={ bandSizes }
+                      onChange={ handleBandSizeChange }>
             </Dropdown>
           </div>
           
           <div className="pv__cup-size">
             <Dropdown title="CUP SIZE"
-                      items={cupSizes}
-                      onChange={handleCupSizeChange}>
+                      items={ cupSizes }
+                      onChange={ handleCupSizeChange }>
             </Dropdown>
           </div>
         </div>
 
         <div className="pv__add">
-          <Button text='Add to Bag' onClick={handleAddToBugClick}></Button>
+          <Button text='Add to Bag' onClick={ handleAddToBugClick }></Button>
         </div>
       </div>
     )
