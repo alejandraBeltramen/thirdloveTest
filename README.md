@@ -1,4 +1,5 @@
-## Thirdlove Code Challenge
+# Thirdlove Code Challenge
+Exercise to screen front-end skills as part of the recruitment process
 
 ## Available Scripts
 
