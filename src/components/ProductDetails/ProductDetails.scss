@@ -1,0 +1,50 @@
+@import '../../ui-core/colors';
+
+.product-details {
+  padding: 39px 20px 40px 20px;
+  font-size: 13px;
+  font-style: normal;
+  font-stretch: normal;
+
+  .pd__title {
+    height: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    color: $font-color-dark;
+    padding-bottom: 13px;
+    border-bottom: 3px solid $title-divisor;
+    margin-bottom: 17.5px;
+  }
+
+  p {
+    font-family: Montserrat,sans-serif;
+    font-weight: normal;
+    line-height: 1.77;
+    letter-spacing: normal;
+    color: $font-color-grey;
+    padding-top: 17.5px;
+    padding-bottom: 10px;
+    margin: 0;
+  }
+
+  ul {
+    font-family: Montserrat,sans-serif;
+    font-weight: normal;
+    line-height: 1.77;
+    letter-spacing: normal;
+    color: $font-color-grey;
+    padding-left: 15px;
+  }
+
+  @media (min-width: 768px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 11%;
+    width: 42%;
+  }
+}
