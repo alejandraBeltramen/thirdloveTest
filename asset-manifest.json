@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/repository-name/static/css/main.bf36eb4e.chunk.css",
-    "main.js": "/repository-name/static/js/main.12e4afe1.chunk.js",
-    "main.js.map": "/repository-name/static/js/main.12e4afe1.chunk.js.map",
-    "runtime~main.js": "/repository-name/static/js/runtime~main.f7634681.js",
-    "runtime~main.js.map": "/repository-name/static/js/runtime~main.f7634681.js.map",
-    "static/css/2.a881067f.chunk.css": "/repository-name/static/css/2.a881067f.chunk.css",
-    "static/js/2.9300b629.chunk.js": "/repository-name/static/js/2.9300b629.chunk.js",
-    "static/js/2.9300b629.chunk.js.map": "/repository-name/static/js/2.9300b629.chunk.js.map",
-    "index.html": "/repository-name/index.html",
-    "precache-manifest.794e2fca9d7efe798e2e3b21caa5e95b.js": "/repository-name/precache-manifest.794e2fca9d7efe798e2e3b21caa5e95b.js",
-    "service-worker.js": "/repository-name/service-worker.js",
-    "static/css/2.a881067f.chunk.css.map": "/repository-name/static/css/2.a881067f.chunk.css.map",
-    "static/css/main.bf36eb4e.chunk.css.map": "/repository-name/static/css/main.bf36eb4e.chunk.css.map"
+    "main.css": "/thirdloveTest/static/css/main.bf36eb4e.chunk.css",
+    "main.js": "/thirdloveTest/static/js/main.a0e24e2a.chunk.js",
+    "main.js.map": "/thirdloveTest/static/js/main.a0e24e2a.chunk.js.map",
+    "runtime~main.js": "/thirdloveTest/static/js/runtime~main.a6d3e9af.js",
+    "runtime~main.js.map": "/thirdloveTest/static/js/runtime~main.a6d3e9af.js.map",
+    "static/css/2.a881067f.chunk.css": "/thirdloveTest/static/css/2.a881067f.chunk.css",
+    "static/js/2.9300b629.chunk.js": "/thirdloveTest/static/js/2.9300b629.chunk.js",
+    "static/js/2.9300b629.chunk.js.map": "/thirdloveTest/static/js/2.9300b629.chunk.js.map",
+    "index.html": "/thirdloveTest/index.html",
+    "precache-manifest.f7bce28363f15f8e90bd4ce3f0affe98.js": "/thirdloveTest/precache-manifest.f7bce28363f15f8e90bd4ce3f0affe98.js",
+    "service-worker.js": "/thirdloveTest/service-worker.js",
+    "static/css/2.a881067f.chunk.css.map": "/thirdloveTest/static/css/2.a881067f.chunk.css.map",
+    "static/css/main.bf36eb4e.chunk.css.map": "/thirdloveTest/static/css/main.bf36eb4e.chunk.css.map"
   }
 }
