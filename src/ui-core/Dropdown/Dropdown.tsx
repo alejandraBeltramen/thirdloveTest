@@ -38,7 +38,6 @@ export default class Dropdown extends React.Component<DropdownProps, DropdownSta
           <select className="uc-dd-list" onChange={(event) => onChange(event.target.value)}>
             { items.map((item: string, i: number) => this.renderOption(item, i)) }
           </select>
-          <i className="uc-dd-icon"></i>
         </div>
       </div>
     );

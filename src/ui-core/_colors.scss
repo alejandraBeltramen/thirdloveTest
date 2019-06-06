@@ -1,5 +1,36 @@
+/* Bra colors */
 $naked-1: #ffefe5;
 $naked-2: #dab5a1;
 $naked-3: #d49d89;
 $naked-4: #6a3a33;
 $naked-5: #524346;
+
+/* Base Colors */
+// TODO define a color palette here
+
+/* Font colors */
+$font-color-dark: #222222;
+$font-color-light: #ffffff;
+$font-color-grey: #444444;
+$font-color-light-grey: #666666;
+
+/* Dropdown */
+$dropdown-title-font-color: $font-color-dark;
+$dropdown-list-border-color: #e0e0e0;
+$dropdown-list-background-color: #ffffff;
+$dropdown-list-font-color: $font-color-grey;
+
+/* Color Picker */
+$color-picker-font-color: $font-color-dark;
+$color-picker-background-option-color: #ffefe5;
+$color-picker-border-color-selected-option: #c9c9c9;
+
+/* Button */
+$button-background-color: #000000;
+$button-font-color: $font-color-light;
+
+/* Others */
+$title-divisor: #f7f7f7;
+$dots-carousel-background-color: #cccccc;
+$dots-carousel-background-color-selected: #444444;
+$thumbnail-carousel-border-color-selected: #888888;

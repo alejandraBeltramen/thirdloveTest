@@ -1,44 +1,43 @@
+@import '../../ui-core/colors';
+
 .product-page {
   font-family: OpenSans, sans-serif;;
 
   .pp__header {
     padding: 20px;
     text-align: center;
-
-    @media (min-width: 768px) {
-      padding: 30px;
-    }
+    font-style: normal;
+    font-stretch: normal;
 
     .pp__header__title {
       font-family: Abhaya Libre;
       font-size: 22px;
       font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
       line-height: 1.09;
       letter-spacing: normal;
-      color: #222222;
+      color: $font-color-dark;
       margin: 0;
-
-      @media (min-width: 768px) {
-        font-size: 24px;
-      }
     }
   
     .pp__header__price {
       font-size: 15px;
       font-weight: 600;
-      font-style: normal;
-      font-stretch: normal;
       line-height: normal;
       letter-spacing: 1px;
-      color: #666666;
-  
-      margin: 0;
-      margin-top: 2px;
+      color: $font-color-light-grey;
+      margin: 2px 0 0 0;
     }
   }
-  
+  @media (min-width: 768px) {
+    .pp__header {
+      padding: 30px;
+
+      .pp__header__title {
+        font-size: 24px;
+      }
+    }
+  }
+
   @media (min-width: 1024px) {
     .pp-product{
       overflow: auto;
@@ -52,6 +51,5 @@
         float: right;
       }
     }
-    
   }
 }

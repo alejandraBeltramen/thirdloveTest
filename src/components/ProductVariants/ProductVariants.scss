@@ -1,14 +1,7 @@
+@import '../../ui-core/colors';
+
 .product-variants {
-	padding-right: 20px;
-	padding-left: 20px;
-	padding-top: 24px;
-  padding-bottom: 0;
-  
-  @media (min-width: 768px) {
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-top: 34px;
-  }
+	padding: 24px 20px 0 20px;
 
 	%pv-size {
 		float: left;
@@ -38,13 +31,19 @@
     font-stretch: normal;
     line-height: normal;
     letter-spacing: 1.5px;
-    color: #222222;
+    color: $font-color-dark;
 
 		.pv__stock__value {
 			font-weight: 600;
 		}
   }
-  
+	
+	@media (min-width: 768px) {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 34px;
+	}
+
   @media (min-width: 1024px) {
     display: inline-block;
     float: right;

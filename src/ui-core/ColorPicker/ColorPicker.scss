@@ -7,7 +7,7 @@
   font-stretch: normal;
   line-height: 1.54;
   letter-spacing: 1.5px;
-  color: #222222;
+  color: $color-picker-font-color;
 
   .uc-cp__selection {
     font-weight: 600;
@@ -20,15 +20,14 @@
     .uc-cp-options__item {
       width: 29.4px;
       height: 30px;
-      background-color: #ffefe5;
-
+      background-color: $color-picker-background-option-color;
       display: inline-block;
       border-radius: 50%;
       margin-right: 25.5px;
       cursor: pointer;
 
       &.selected {
-        border: solid 3px #c9c9c9;
+        border: solid 3px $color-picker-border-color-selected-option;
         width: 26.4px;
         height: 27px;
       }
