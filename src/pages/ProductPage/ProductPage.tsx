@@ -205,7 +205,7 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
    * Maps a raw image into an image object useful
    * @param rawImages 
    */
-  getImages(rawImages: []): BraImage[] {
+  getImages(rawImages: RawBraImage[]): BraImage[] {
     return _.map(rawImages, (rawImage: RawBraImage) => ({
       main: `${HTTPS}${rawImage.src1000}`,
       thumbnail: `${HTTPS}${rawImage.src100}`
@@ -237,7 +237,7 @@ export default class ProductPage extends React.Component<ProductPageProps, Produ
    * @param variants 
    */
   getPrice(variants: BraVariant[]): string {
-    const rawPrice = _.get(_.head(variants), 'price', '-');
+    const rawPrice = _.get(_.head(variants), 'price') || '';
     return rawPrice.slice(0, rawPrice.indexOf('.'));
   }
 
