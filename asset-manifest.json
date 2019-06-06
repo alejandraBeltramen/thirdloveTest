@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/thirdloveTest/static/css/main.bf36eb4e.chunk.css",
-    "main.js": "/thirdloveTest/static/js/main.a0e24e2a.chunk.js",
-    "main.js.map": "/thirdloveTest/static/js/main.a0e24e2a.chunk.js.map",
+    "main.js": "/thirdloveTest/static/js/main.fc162606.chunk.js",
+    "main.js.map": "/thirdloveTest/static/js/main.fc162606.chunk.js.map",
     "runtime~main.js": "/thirdloveTest/static/js/runtime~main.a6d3e9af.js",
     "runtime~main.js.map": "/thirdloveTest/static/js/runtime~main.a6d3e9af.js.map",
     "static/css/2.a881067f.chunk.css": "/thirdloveTest/static/css/2.a881067f.chunk.css",
     "static/js/2.9300b629.chunk.js": "/thirdloveTest/static/js/2.9300b629.chunk.js",
     "static/js/2.9300b629.chunk.js.map": "/thirdloveTest/static/js/2.9300b629.chunk.js.map",
     "index.html": "/thirdloveTest/index.html",
-    "precache-manifest.f7bce28363f15f8e90bd4ce3f0affe98.js": "/thirdloveTest/precache-manifest.f7bce28363f15f8e90bd4ce3f0affe98.js",
+    "precache-manifest.f5b72a13978e8dcad64e80e8d5ac4ac1.js": "/thirdloveTest/precache-manifest.f5b72a13978e8dcad64e80e8d5ac4ac1.js",
     "service-worker.js": "/thirdloveTest/service-worker.js",
     "static/css/2.a881067f.chunk.css.map": "/thirdloveTest/static/css/2.a881067f.chunk.css.map",
     "static/css/main.bf36eb4e.chunk.css.map": "/thirdloveTest/static/css/main.bf36eb4e.chunk.css.map"
